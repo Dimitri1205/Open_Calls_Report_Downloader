@@ -93,7 +93,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-//initializing DownloadAndFiler (report), EditTabs and BarChart classes, new Stage object for EditTabs scene
+//initializing DownloadAndFilter (report), EditTabs and BarChart classes, new Stage object for EditTabs scene
         DownloadAndFilter report = new DownloadAndFilter();
         CallsBarChart chart = new CallsBarChart();
         EditTabs tabs = new EditTabs();
@@ -233,7 +233,7 @@ public class App extends Application {
         uki.selectedProperty().addListener(countriesChangeListener(uki));
 
 /* Download button handler and logic for statusLabel label. Logic also prevents empty lists in reports setter argument,
- for cases where lists are required, sets the parameters from DownloadAndFilter class and starts the service -----------*/
+ for cases where lists are required. Sets the parameters for DownloadAndFilter class and starts the service -----------*/
         download.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -313,7 +313,7 @@ public class App extends Application {
                             workbookOut.close();
                             fileOutputStream.close();
                         }
-                        System.out.println("Saved");
+                        statusLabel.setText("Saved");
 
                     } catch (IOException e) {
                         System.out.println(e);
