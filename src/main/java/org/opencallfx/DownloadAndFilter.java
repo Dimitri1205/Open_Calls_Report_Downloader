@@ -101,7 +101,7 @@ this part is trowing an exception if url string is invalid or downloading/openin
                 URLConnection urlConnection = url.openConnection();
 
 //initializing streaming workbook from urlConnection stream and getting the required sheet
-                Workbook inputWorkbook = StreamingReader.builder().rowCacheSize(10).bufferSize(4096).open(urlConnection.getInputStream());
+                Workbook inputWorkbook = StreamingReader.builder().rowCacheSize(10).bufferSize(1024).open(urlConnection.getInputStream());
                 Sheet inputSheet = inputWorkbook.getSheet("Data_SR_Level");
 
 //initializing output workbook to return and creating the sheet
